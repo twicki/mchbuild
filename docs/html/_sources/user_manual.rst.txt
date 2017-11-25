@@ -35,19 +35,22 @@ Like that, configuring ``packA`` using will require passing the dependent instal
 Setup a cmake bundle
 ----------------------
 
-Using MCHBuild will require creating a cmake file called a bundle. The bundle file
-will define all the dependencies one by one. Therefore all the dependent project
+Using MCHBuild will require creating an additional cmake project file, called a bundle, inside each project. 
+The bundle file
+will define all the dependent packages one by one, and at the end of the bundle, it will add the root CMakeLists.txt
+of the project as yet another external project of the bundle. All the dependent project
 (except the external dependencies) will require as well a bundle cmake file. 
 
 
 The configuration of the bundle will be placed in
 ``<project>/bundle/CMakeLists.txt``
 
-The bundle file contains the following structure:
+The bundle file should contain the following cmake blocks:
 
 * Locally clone the MCHBuild package. In order to do that there is a cmake macro in 
-  mchbuild that helps cloning git repositories. Copy the macro ``mchbuildCloneRepository``
-  into the current package and use it to clone mchbuild
+  mchbuild that helps cloning git repositories. Copy manually the macro ``mchbuildCloneRepository``
+  (from the mchbuild repository) into the current package and use it from the bundle CMakeLists.txt 
+  to clone mchbuild
 
 .. code-block:: cmake
 
@@ -75,7 +78,7 @@ The bundle file contains the following structure:
   
   Notice that mchbuild will require that the dependent package ``packB`` contains a bundle cmake project, 
   but not for the external dependencies ``packExt1`` and ``packExt2``.
-  The REQUIRED_VAR will require the external project finder to set properly the ``packB_DIR`` variable, pointing to 
+  The ``REQUIRED_VAR`` will require the external project finder to set properly the ``packB_DIR`` variable, pointing to 
   the external project directory that contains the corresponding cmake Config file. 
 
 * We can also add external dependencies using the mchbuild_find_package. See for example how to add dependency on ``packExt1``
@@ -108,14 +111,14 @@ The bundle file contains the following structure:
         CMAKE_ARGS -DpackB_DIR=${packB_DIR}
     )
  
-  Since we are adding the top CMakeLists.txt of this project, packA, as a cmake external package, 
-  instead of specifying a GIT url, here we simply specify the source directory that contains the top CMakeLists.txt
+  Since we are adding the root CMakeLists.txt of this project, packA, as a cmake external package, 
+  instead of specifying a GIT url, here we simply specify the source directory that contains the root CMakeLists.txt
  
   Notice that here we use the cmake config directories obtained by previous calls to ``mchbuild_find_package`` 
   to set the cmake paths in  ``CMAKE_ARGS``
 
-* The top CMakeLists.txt will contain some tests, but the bundle cmake project still does not contain any test. 
-  Therefore, at the end of the bundle we forward the tests defined in the top CMakeLists.txt of ``packA`` to the bundle
+* The root CMakeLists.txt will contain some tests, but the bundle cmake project still does not contain any test. 
+  Therefore, at the end of the bundle we forward the tests defined in the root CMakeLists.txt of ``packA`` to the bundle
   project
 
   .. code-block:: cmake
@@ -129,3 +132,52 @@ The bundle file contains the following structure:
 
 The external project files
 -----------------------------
+
+Each cmake call to ``mchbuild_find_package`` will first try to find a cmake config file of the project, in the cmake search paths
+(``CMAKE_MODULE_PATH```or user provided ``-Dpack_DIR=<>`` paths). 
+If the package is not found, it will then try to clone or download the package and compile it before continue processing the rest of 
+the bundle.
+For each package that might be added as a dependency from a bundle, there should be a cmake file,
+named following the convention ``External_<pack>.cmake``,
+that contains the cmake functionality to download and compile the package. 
+
+In the following we describe the main components of a ``External_<pack>.cmake``:
+
+* Get the source,build and install directories for the compilation of the dependent project using the following mchbuild macro
+
+  .. code-block:: cmake
+
+      mchbuild_set_external_properties(NAME "packA" 
+        INSTALL_DIR install_dir 
+        SOURCE_DIR source_dir
+        BINARY_DIR binary_dir
+      )
+
+* Add an external project for the package. Since the bundle will add external projects passing a GIT url and it will add its own top project
+  indicating the source directory, we need to possibly add the external project for these two cases:
+
+  .. code-block:: cmake
+
+    if(ARG_GIT_REPOSITORY)
+      ExternalProject_Add(packA
+        PREFIX packA-prefix
+        GIT_REPOSITORY ${ARG_GIT_REPOSITORY}
+        GIT_TAG ${ARG_GIT_TAG}
+        SOURCE_SUBDIR "bundle"
+        INSTALL_DIR "${install_dir}"
+        CMAKE_ARGS ${ARG_CMAKE_ARGS}
+      )
+    else()
+      ExternalProject_Add(packA
+        SOURCE_DIR ${ARG_SOURCE_DIR}
+        INSTALL_DIR "${install_dir}"
+        CMAKE_ARGS ${ARG_CMAKE_ARGS} 
+    )
+    endif()
+
+* Set accordingly all the ``REQUIRED_VARS`` and ``FORWARD_VARS`` passed to ``mchbuild_find_package``. For example
+
+  .. code-block:: cmake
+
+      set(packA_DIR "${binary_dir}/prefix/packA/cmake" CACHE INTERNAL "")
+
