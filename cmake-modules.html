@@ -1,239 +1,86 @@
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Installation &amp; Use &mdash; Dawn  documentation</title>
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &amp; Use &#8212; Dawn  documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="cmake-modules/External_Boost.html" />
+    <link rel="prev" title="MCHBuild — A builder infrastructure for cmake projects" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="cmake-modules/External_Boost.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="MCHBuild — A builder infrastructure for cmake projects"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dawn  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation &amp; Use</a></li>
+<li><a class="reference internal" href="#user-manual">User Manual</a><ul>
+<li><a class="reference internal" href="#basic-cmakelists-txt">Basic CMakeLists.txt</a></li>
+<li><a class="reference internal" href="#setup-a-cmake-bundle">Setup a cmake bundle</a></li>
+<li><a class="reference internal" href="#the-external-project-files">The external project files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cmake-modules-reference">CMake Modules Reference</a><ul>
+</ul>
+</li>
+</ul>
 
-  
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Dawn  documentation" href="index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="cmake-modules/External_Boost.html"/>
-        <link rel="prev" title="MCHBuild — A builder infrastructure for cmake projects" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> Dawn
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">MCHBuild — A builder infrastructure for cmake projects</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cmake-modules/External_Boost.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Index</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation &amp; Use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#user-manual">User Manual</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-cmakelists-txt">Basic CMakeLists.txt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#setup-a-cmake-bundle">Setup a cmake bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-external-project-files">The external project files</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#cmake-modules-reference">CMake Modules Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddCustomDummyTarget.html">mchbuild_add_custom_dummy_target</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddExecutable.html">mchbuild_add_executable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddLibrary.html">mchbuild_add_library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddTargetClangFormat.html">mchbuild_add_target_clang_format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddTargetCleanAll.html">mchbuild_add_target_clean_all</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddUnittest.html">mchbuild_add_unittest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCMakeInit.html">mchbuild_cmake_init</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCheckAndSetCXXFlag.html">mchbuild_check_and_set_cxx_flag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCheckCXXFlag.html">mchbuild_check_cxx_flag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCheckInSourceBuild.html">mchbuild_check_in_source_build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCheckRequiredVars.html">mchbuild_check_required_vars</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCheckVarsAreDefined.html">mchbuild_check_vars_are_defined</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCloneRepository.html">mchbuild_clone_repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCombineLibraries.html">mchbuild_combine_libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildConfigureFile.html">mchbuild_configure_file</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/mchbuildConfigureFile.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildCreatePackageString.html">mchbuild_create_package_string</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/mchbuildCreatePackageString.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildEnableFullRPATH.html">mchbuild_enable_full_rpath</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildExportOptions.html">mchbuild_export_options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildExportPackage.html">mchbuild_export_package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildFindPackage.html">mchbuild_find_package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildFindPythonModule.html">mchbuild_find_python_module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildGenerateCMakeScript.html">mchbuild_generate_cmake_script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildGetArchitectureInfo.html">dawn_get_architecture_info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildGetCacheVariables.html">mchbuild_get_cache_variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildGetCompilerInfo.html">msbuid_get_compiler_info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildGetGitHeadRevision.html">mchbuild_get_git_head_revision</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildGetPlatformInfo.html">mchbuild_get_platform_info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildGetScriptDir.html">mchbuild_get_script_dir</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildIncludeGuard.html">mchbuild_include_guard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildMakeStringPair.html">mchbuild_make_string_pair</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/mchbuildMakeStringPair.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildReportResult.html">mchbuild_report_result</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildRequireArg.html">mchbuild_require_arg</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildSetCXXStandard.html">mchbuild_set_cxx_standard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/FindClang.html">FindClang</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindClang.html#result-variables">Result Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindClang.html#hints">Hints</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/FindLLVM.html">FindLLVM</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindLLVM.html#result-variables">Result Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindLLVM.html#hints">Hints</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/FindSphinx.html">FindSphinx</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindSphinx.html#result-variables">Result Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindSphinx.html#hints">Hints</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/Findbash.html">Findbash</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findbash.html#result-variables">Result Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findbash.html#hints">Hints</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/Findccache.html">Findccache</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findccache.html#result-variables">Result Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findccache.html#hints">Hints</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cmake-modules/Findclang-format.html">Findclang-format</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findclang-format.html#result-variables">Result Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findclang-format.html#hints">Hints</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-            
-          
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-    </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Dawn</a>
-        
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Installation &amp; Use</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            
-              <a href="https://github.com/thfabian/dawn/blob/master/docs/cmake-modules.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="installation-use">
 <h1>Installation &amp; Use<a class="headerlink" href="#installation-use" title="Permalink to this headline">¶</a></h1>
@@ -275,16 +122,19 @@ cmake .. -DPACKB_ROOT<span class="o">=</span>&lt;packb_dir&gt; -DPACKC_ROOT<span
 </div>
 <div class="section" id="setup-a-cmake-bundle">
 <h2>Setup a cmake bundle<a class="headerlink" href="#setup-a-cmake-bundle" title="Permalink to this headline">¶</a></h2>
-<p>Using MCHBuild will require creating a cmake file called a bundle. The bundle file
-will define all the dependencies one by one. Therefore all the dependent project
+<p>Using MCHBuild will require creating an additional cmake project file, called a bundle, inside each project.
+The bundle file
+will define all the dependent packages one by one, and at the end of the bundle, it will add the root CMakeLists.txt
+of the project as yet another external project of the bundle. All the dependent project
 (except the external dependencies) will require as well a bundle cmake file.</p>
 <p>The configuration of the bundle will be placed in
 <code class="docutils literal"><span class="pre">&lt;project&gt;/bundle/CMakeLists.txt</span></code></p>
-<p>The bundle file contains the following structure:</p>
+<p>The bundle file should contain the following cmake blocks:</p>
 <ul class="simple">
 <li>Locally clone the MCHBuild package. In order to do that there is a cmake macro in
-mchbuild that helps cloning git repositories. Copy the macro <code class="docutils literal"><span class="pre">mchbuildCloneRepository</span></code>
-into the current package and use it to clone mchbuild</li>
+mchbuild that helps cloning git repositories. Copy manually the macro <code class="docutils literal"><span class="pre">mchbuildCloneRepository</span></code>
+(from the mchbuild repository) into the current package and use it from the bundle CMakeLists.txt
+to clone mchbuild</li>
 </ul>
 <div class="highlight-cmake"><div class="highlight"><pre><span class="nb">include</span><span class="p">(</span><span class="s">mchbuildCloneRepository</span><span class="p">)</span>
 
@@ -310,7 +160,7 @@ into the current package and use it to clone mchbuild</li>
 </div>
 <p>Notice that mchbuild will require that the dependent package <code class="docutils literal"><span class="pre">packB</span></code> contains a bundle cmake project,
 but not for the external dependencies <code class="docutils literal"><span class="pre">packExt1</span></code> and <code class="docutils literal"><span class="pre">packExt2</span></code>.
-The REQUIRED_VAR will require the external project finder to set properly the <code class="docutils literal"><span class="pre">packB_DIR</span></code> variable, pointing to
+The <code class="docutils literal"><span class="pre">REQUIRED_VAR</span></code> will require the external project finder to set properly the <code class="docutils literal"><span class="pre">packB_DIR</span></code> variable, pointing to
 the external project directory that contains the corresponding cmake Config file.</p>
 </li>
 <li><p class="first">We can also add external dependencies using the mchbuild_find_package. See for example how to add dependency on <code class="docutils literal"><span class="pre">packExt1</span></code></p>
@@ -340,13 +190,13 @@ the external project directory that contains the corresponding cmake Config file
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Since we are adding the top CMakeLists.txt of this project, packA, as a cmake external package,
-instead of specifying a GIT url, here we simply specify the source directory that contains the top CMakeLists.txt</p>
+<p>Since we are adding the root CMakeLists.txt of this project, packA, as a cmake external package,
+instead of specifying a GIT url, here we simply specify the source directory that contains the root CMakeLists.txt</p>
 <p>Notice that here we use the cmake config directories obtained by previous calls to <code class="docutils literal"><span class="pre">mchbuild_find_package</span></code>
 to set the cmake paths in  <code class="docutils literal"><span class="pre">CMAKE_ARGS</span></code></p>
 </li>
-<li><p class="first">The top CMakeLists.txt will contain some tests, but the bundle cmake project still does not contain any test.
-Therefore, at the end of the bundle we forward the tests defined in the top CMakeLists.txt of <code class="docutils literal"><span class="pre">packA</span></code> to the bundle
+<li><p class="first">The root CMakeLists.txt will contain some tests, but the bundle cmake project still does not contain any test.
+Therefore, at the end of the bundle we forward the tests defined in the root CMakeLists.txt of <code class="docutils literal"><span class="pre">packA</span></code> to the bundle
 project</p>
 <div class="highlight-cmake"><div class="highlight"><pre><span class="nb">add_test</span><span class="p">(</span><span class="s">NAME</span> <span class="s">packA-tests</span>
   <span class="s">COMMAND</span>  <span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span> <span class="s">--build</span> <span class="o">${</span><span class="nv">packA_binary_dir</span><span class="o">}</span> <span class="s">--target</span> <span class="s">test</span>
@@ -359,6 +209,51 @@ project</p>
 </div>
 <div class="section" id="the-external-project-files">
 <h2>The external project files<a class="headerlink" href="#the-external-project-files" title="Permalink to this headline">¶</a></h2>
+<p>Each cmake call to <code class="docutils literal"><span class="pre">mchbuild_find_package</span></code> will first try to find a cmake config file of the project, in the cmake search paths
+(<code class="docutils literal"><span class="pre">CMAKE_MODULE_PATH```or</span> <span class="pre">user</span> <span class="pre">provided</span> <span class="pre">``-Dpack_DIR=&lt;&gt;</span></code> paths).
+If the package is not found, it will then try to clone or download the package and compile it before continue processing the rest of
+the bundle.
+For each package that might be added as a dependency from a bundle, there should be a cmake file,
+named following the convention <code class="docutils literal"><span class="pre">External_&lt;pack&gt;.cmake</span></code>,
+that contains the cmake functionality to download and compile the package.</p>
+<p>In the following we describe the main components of a <code class="docutils literal"><span class="pre">External_&lt;pack&gt;.cmake</span></code>:</p>
+<ul>
+<li><p class="first">Get the source,build and install directories for the compilation of the dependent project using the following mchbuild macro</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">mchbuild_set_external_properties</span><span class="p">(</span><span class="s">NAME</span> <span class="s2">&quot;packA&quot;</span>
+  <span class="s">INSTALL_DIR</span> <span class="s">install_dir</span>
+  <span class="s">SOURCE_DIR</span> <span class="s">source_dir</span>
+  <span class="s">BINARY_DIR</span> <span class="s">binary_dir</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add an external project for the package. Since the bundle will add external projects passing a GIT url and it will add its own top project
+indicating the source directory, we need to possibly add the external project for these two cases:</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">if</span><span class="p">(</span><span class="s">ARG_GIT_REPOSITORY</span><span class="p">)</span>
+  <span class="nb">ExternalProject_Add</span><span class="p">(</span><span class="s">packA</span>
+    <span class="s">PREFIX</span> <span class="s">packA-prefix</span>
+    <span class="s">GIT_REPOSITORY</span> <span class="o">${</span><span class="nv">ARG_GIT_REPOSITORY</span><span class="o">}</span>
+    <span class="s">GIT_TAG</span> <span class="o">${</span><span class="nv">ARG_GIT_TAG</span><span class="o">}</span>
+    <span class="s">SOURCE_SUBDIR</span> <span class="s2">&quot;bundle&quot;</span>
+    <span class="s">INSTALL_DIR</span> <span class="s2">&quot;${install_dir}&quot;</span>
+    <span class="s">CMAKE_ARGS</span> <span class="o">${</span><span class="nv">ARG_CMAKE_ARGS</span><span class="o">}</span>
+  <span class="p">)</span>
+<span class="nb">else</span><span class="p">()</span>
+  <span class="nb">ExternalProject_Add</span><span class="p">(</span><span class="s">packA</span>
+    <span class="s">SOURCE_DIR</span> <span class="o">${</span><span class="nv">ARG_SOURCE_DIR</span><span class="o">}</span>
+    <span class="s">INSTALL_DIR</span> <span class="s2">&quot;${install_dir}&quot;</span>
+    <span class="s">CMAKE_ARGS</span> <span class="o">${</span><span class="nv">ARG_CMAKE_ARGS</span><span class="o">}</span>
+<span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set accordingly all the <code class="docutils literal"><span class="pre">REQUIRED_VARS</span></code> and <code class="docutils literal"><span class="pre">FORWARD_VARS</span></code> passed to <code class="docutils literal"><span class="pre">mchbuild_find_package</span></code>. For example</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">set</span><span class="p">(</span><span class="s">packA_DIR</span> <span class="s2">&quot;${binary_dir}/prefix/packA/cmake&quot;</span> <span class="s">CACHE</span> <span class="s">INTERNAL</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="section" id="cmake-modules-reference">
@@ -421,76 +316,29 @@ project</p>
 </div>
 
 
-           </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cmake-modules/External_Boost.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="MCHBuild — A builder infrastructure for cmake projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2017, ETH Zurich and MeteoSwiss.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
-
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
-
-</body>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="cmake-modules/External_Boost.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="MCHBuild — A builder infrastructure for cmake projects"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dawn  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, ETH Zurich and MeteoSwiss.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
 </html>
