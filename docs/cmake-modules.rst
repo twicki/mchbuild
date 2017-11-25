@@ -6,18 +6,18 @@ This section describes the CMake functionailty of Dawn and it's subprojects.
 Installation
 ************
 
-Add the ``<msbuild>/cmake/modules`` directory to the ``CMAKE_MODULE_PATH`` to use the functions, macros and modules:
+Add the ``<mchbuild>/cmake/modules`` directory to the ``CMAKE_MODULE_PATH`` to use the functions, macros and modules:
 
 .. code-block:: cmake
 
-  list(APPEND CMAKE_MODULE_PATH "<msbuild>/cmake/modules")
+  list(APPEND CMAKE_MODULE_PATH "<mchbuild>/cmake/modules")
 
-Note that all `msbuild` projects contain a ``msbuild_cmake_init`` macro which tries to find the CMake modules of Msbuild.
+Note that all `mchbuild` projects contain a ``mchbuild_cmake_init`` macro which tries to find the CMake modules of MCHbuild.
 
 .. code-block:: cmake
 
-  include(MsbuildCMakeInit)
-  msbuild_cmake_init()
+  include(MCHbuildCMakeInit)
+  mchbuild_cmake_init()
 
 Functions & Macros
 ******************
@@ -37,46 +37,49 @@ Each function and macro uses a `snake-case <https://en.wikipedia.org/wiki/Snake_
   /cmake-modules/External_GTClang
   /cmake-modules/External_Protobuf
   /cmake-modules/External_dawn
+  /cmake-modules/External_gridtools
   /cmake-modules/External_gtclang
   /cmake-modules/GTClangAllOptions
-  /cmake-modules/msbuildAddCustomDummyTarget
-  /cmake-modules/msbuildAddDependency
-  /cmake-modules/msbuildAddExecutable
-  /cmake-modules/msbuildAddLibrary
-  /cmake-modules/msbuildAddOptionalDeps
-  /cmake-modules/msbuildAddTargetClangFormat
-  /cmake-modules/msbuildAddTargetCleanAll
-  /cmake-modules/msbuildAddUnittest
-  /cmake-modules/msbuildCMakeInit
-  /cmake-modules/msbuildCheckAndSetCXXFlag
-  /cmake-modules/msbuildCheckCXXFlag
-  /cmake-modules/msbuildCheckInSourceBuild
-  /cmake-modules/msbuildCheckRequiredVars
-  /cmake-modules/msbuildCheckVarsAreDefined
-  /cmake-modules/msbuildCloneRepository
-  /cmake-modules/msbuildCombineLibraries
-  /cmake-modules/msbuildConfigureFile
-  /cmake-modules/msbuildCreatePackageString
-  /cmake-modules/msbuildExportPackage
-  /cmake-modules/msbuildFindPackage
-  /cmake-modules/msbuildFindPythonModule
-  /cmake-modules/msbuildGenerateCMakeScript
-  /cmake-modules/msbuildGetArchitectureInfo
-  /cmake-modules/msbuildGetCacheVariables
-  /cmake-modules/msbuildGetCompilerInfo
-  /cmake-modules/msbuildGetGitHeadRevision
-  /cmake-modules/msbuildGetPlatformInfo
-  /cmake-modules/msbuildGetScriptDir
-  /cmake-modules/msbuildIncludeGuard
-  /cmake-modules/msbuildMakeCMakeScript
-  /cmake-modules/msbuildMakePackageInfo
-  /cmake-modules/msbuildMakeStringPair
-  /cmake-modules/msbuildReportResult
-  /cmake-modules/msbuildRequireArg
-  /cmake-modules/msbuildRequireOnlyOneOf
-  /cmake-modules/msbuildSetCXXStandard
-  /cmake-modules/msbuildSetDownloadDir
-  /cmake-modules/msbuildSetExternalProperties
+  /cmake-modules/mchbuildAddCustomDummyTarget
+  /cmake-modules/mchbuildAddDependency
+  /cmake-modules/mchbuildAddExecutable
+  /cmake-modules/mchbuildAddLibrary
+  /cmake-modules/mchbuildAddOptionalDeps
+  /cmake-modules/mchbuildAddTargetClangFormat
+  /cmake-modules/mchbuildAddTargetCleanAll
+  /cmake-modules/mchbuildAddUnittest
+  /cmake-modules/mchbuildCMakeInit
+  /cmake-modules/mchbuildCheckAndSetCXXFlag
+  /cmake-modules/mchbuildCheckCXXFlag
+  /cmake-modules/mchbuildCheckInSourceBuild
+  /cmake-modules/mchbuildCheckRequiredVars
+  /cmake-modules/mchbuildCheckVarsAreDefined
+  /cmake-modules/mchbuildCloneRepository
+  /cmake-modules/mchbuildCombineLibraries
+  /cmake-modules/mchbuildConfigureFile
+  /cmake-modules/mchbuildCreatePackageString
+  /cmake-modules/mchbuildEnableFullRPATH
+  /cmake-modules/mchbuildExportOptions
+  /cmake-modules/mchbuildExportPackage
+  /cmake-modules/mchbuildFindPackage
+  /cmake-modules/mchbuildFindPythonModule
+  /cmake-modules/mchbuildGenerateCMakeScript
+  /cmake-modules/mchbuildGetArchitectureInfo
+  /cmake-modules/mchbuildGetCacheVariables
+  /cmake-modules/mchbuildGetCompilerInfo
+  /cmake-modules/mchbuildGetGitHeadRevision
+  /cmake-modules/mchbuildGetPlatformInfo
+  /cmake-modules/mchbuildGetScriptDir
+  /cmake-modules/mchbuildIncludeGuard
+  /cmake-modules/mchbuildMakeCMakeScript
+  /cmake-modules/mchbuildMakePackageInfo
+  /cmake-modules/mchbuildMakeStringPair
+  /cmake-modules/mchbuildReportResult
+  /cmake-modules/mchbuildRequireArg
+  /cmake-modules/mchbuildRequireOnlyOneOf
+  /cmake-modules/mchbuildSetCXXStandard
+  /cmake-modules/mchbuildSetDownloadDir
+  /cmake-modules/mchbuildSetExternalProperties
 
 Modules
 *******

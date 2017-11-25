@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildFindPackage.cmake
+.. cmake-module:: mchbuildFindPackage.cmake

@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildAddTargetClangFormat.cmake
+.. cmake-module:: mchbuildAddTargetClangFormat.cmake

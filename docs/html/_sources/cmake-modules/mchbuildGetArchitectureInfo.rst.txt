@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildGetArchitectureInfo.cmake
+.. cmake-module:: mchbuildGetArchitectureInfo.cmake

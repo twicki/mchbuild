@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildMakeCMakeScript.cmake
+.. cmake-module:: mchbuildMakeCMakeScript.cmake

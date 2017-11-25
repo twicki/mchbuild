@@ -3,7 +3,7 @@ MSBuild <br/> <a target="_blank" href="http://semver.org">![Version][Version.Bad
 
 ## Introduction
 
-Msbuild
+MCHbuild
 
 [MIT.License]: https://img.shields.io/badge/License-MIT-blue.svg
 [Version.Badge]: https://badge.fury.io/gh/MeteoSwiss-APN%2Fdawn.svg

@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildCheckVarsAreDefined.cmake
+.. cmake-module:: mchbuildCheckVarsAreDefined.cmake

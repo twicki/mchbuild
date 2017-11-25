@@ -6,18 +6,18 @@ This section describes the CMake functionailty of Dawn and it's subprojects.
 Installation
 ************
 
-Add the ``<msbuild>/cmake/modules`` directory to the ``CMAKE_MODULE_PATH`` to use the functions, macros and modules:
+Add the ``<mchbuild>/cmake/modules`` directory to the ``CMAKE_MODULE_PATH`` to use the functions, macros and modules:
 
 .. code-block:: cmake
 
-  list(APPEND CMAKE_MODULE_PATH "<msbuild>/cmake/modules")
+  list(APPEND CMAKE_MODULE_PATH "<mchbuild>/cmake/modules")
 
-Note that all `msbuild` projects contain a ``msbuild_cmake_init`` macro which tries to find the CMake modules of Msbuild.
+Note that all `mchbuild` projects contain a ``mchbuild_cmake_init`` macro which tries to find the CMake modules of MCHbuild.
 
 .. code-block:: cmake
 
-  include(MsbuildCMakeInit)
-  msbuild_cmake_init()
+  include(MCHbuildCMakeInit)
+  mchbuild_cmake_init()
 
 Functions & Macros
 ******************

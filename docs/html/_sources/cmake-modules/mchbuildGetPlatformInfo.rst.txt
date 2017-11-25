@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildGetPlatformInfo.cmake
+.. cmake-module:: mchbuildGetPlatformInfo.cmake

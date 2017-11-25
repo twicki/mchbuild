@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildCheckInSourceBuild.cmake
+.. cmake-module:: mchbuildCheckInSourceBuild.cmake

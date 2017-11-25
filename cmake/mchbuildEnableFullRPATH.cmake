@@ -23,7 +23,7 @@ mchbuild_include_guard()
 
 #.rst:
 # mchbuild_enable_full_rpath
-# ----------------------
+# --------------------------------
 #
 # Enable full RPATH_ support.
 #

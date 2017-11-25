@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildCheckAndSetCXXFlag.cmake
+.. cmake-module:: mchbuildCheckAndSetCXXFlag.cmake

@@ -4,16 +4,16 @@ set(SPHINX_ROOT ${CMAKE_CURRENT_LIST_DIR})
 # Extract CMake documentation
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules-generate.cmake.in
              ${CMAKE_CURRENT_BINARY_DIR}/cmake-modules-generate.cmake @ONLY)
-add_custom_target(MsbuildDocsCMakeModules
+add_custom_target(MCHbuildDocsCMakeModules
   COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake-modules-generate.cmake
-  COMMENT "Configuring msbuild-cmake" VERBATIM
+  COMMENT "Configuring mchbuild-cmake" VERBATIM
 )
 
 # Run sphinx
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/conf.py.in
                ${CMAKE_CURRENT_SOURCE_DIR}/conf.py @ONLY)
 
-add_custom_target(MsbuildDocsSphinxHtml
+add_custom_target(MCHbuildDocsSphinxHtml
    COMMAND ${SPHINX_EXECUTABLE} -b html -d ${CMAKE_BINARY_DIR}/sphinx/doctrees 
            ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR}/sphinx/html
    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
@@ -21,7 +21,7 @@ add_custom_target(MsbuildDocsSphinxHtml
    DEPENDS conf.py 
            index.rst 
 )
-add_dependencies(MsbuildDocsSphinxHtml MsbuildDocsCMakeModules)
+add_dependencies(MCHbuildDocsSphinxHtml MCHbuildDocsCMakeModules)
 
 # Copy HTML
 add_custom_target(docs
@@ -29,7 +29,7 @@ add_custom_target(docs
                                             ${CMAKE_SOURCE_DIR}/docs/html
  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
  COMMENT "Generating HTML documentation" VERBATIM
- DEPENDS MsbuildDocsSphinxHtml
+ DEPENDS MCHbuildDocsSphinxHtml
 )
 
 add_custom_target(deploy-docs
