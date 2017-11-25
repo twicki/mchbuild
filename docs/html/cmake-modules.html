@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CMake Modules &mdash; Dawn  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Dawn  documentation" href="index.html"/>
+        <link rel="next" title="&lt;no title&gt;" href="cmake-modules/External_Boost.html"/>
+        <link rel="prev" title="Dawn — Compiler toolchain for high-level DSLs" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Dawn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CMake Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions-macros">Functions &amp; Macros</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildAddCustomDummyTarget.html">msbuild_add_custom_dummy_target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildAddExecutable.html">msbuild_add_executable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildAddLibrary.html">msbuild_add_library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildAddTargetClangFormat.html">msbuild_add_target_clang_format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildAddTargetCleanAll.html">msbuild_add_target_clean_all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildAddUnittest.html">msbuild_add_unittest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCMakeInit.html">msbuild_cmake_init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCheckAndSetCXXFlag.html">msbuild_check_and_set_cxx_flag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCheckCXXFlag.html">msbuild_check_cxx_flag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCheckInSourceBuild.html">msbuild_check_in_source_build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCheckRequiredVars.html">msbuild_check_required_vars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCheckVarsAreDefined.html">msbuild_check_required_vars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCloneRepository.html">msbuild_clone_repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCombineLibraries.html">msbuild_combine_libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildConfigureFile.html">msbuild_configure_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildCreatePackageString.html">msbuild_create_package_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildExportPackage.html">msbuild_export_package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildFindPackage.html">msbuild_find_package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildFindPythonModule.html">msbuild_find_python_module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildGenerateCMakeScript.html">msbuild_generate_cmake_script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildGetArchitectureInfo.html">dawn_get_architecture_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildGetCacheVariables.html">msbuild_get_cache_variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildGetCompilerInfo.html">msbuid_get_compiler_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildGetGitHeadRevision.html">msbuild_get_git_head_revision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildGetPlatformInfo.html">msbuild_get_platform_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildGetScriptDir.html">msbuild_get_script_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildIncludeGuard.html">msbuild_include_guard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildMakeStringPair.html">msbuild_make_string_pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildReportResult.html">msbuild_report_result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildRequireArg.html">msbuild_require_arg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/msbuildSetCXXStandard.html">msbuild_set_cxx_standard</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindClang.html">FindClang</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindLLVM.html">FindLLVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/FindSphinx.html">FindSphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findbash.html">Findbash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findccache.html">Findccache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmake-modules/Findclang-format.html">Findclang-format</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Dawn</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>CMake Modules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/thfabian/dawn/blob/master/docs/cmake-modules.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cmake-modules">
+<h1>CMake Modules<a class="headerlink" href="#cmake-modules" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the CMake functionailty of Dawn and it’s subprojects.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Add the <code class="docutils literal"><span class="pre">&lt;msbuild&gt;/cmake/modules</span></code> directory to the <code class="docutils literal"><span class="pre">CMAKE_MODULE_PATH</span></code> to use the functions, macros and modules:</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span> <span class="s">CMAKE_MODULE_PATH</span> <span class="s2">&quot;&lt;msbuild&gt;/cmake/modules&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that all <cite>msbuild</cite> projects contain a <code class="docutils literal"><span class="pre">msbuild_cmake_init</span></code> macro which tries to find the CMake modules of Msbuild.</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">include</span><span class="p">(</span><span class="s">MsbuildCMakeInit</span><span class="p">)</span>
+<span class="nb">msbuild_cmake_init</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="functions-macros">
+<h2>Functions &amp; Macros<a class="headerlink" href="#functions-macros" title="Permalink to this headline">¶</a></h2>
+<p>Each function and macro uses a <a class="reference external" href="https://en.wikipedia.org/wiki/Snake_case">snake-case</a> identifier and is defined in a spereate file using he corresponding <a class="reference external" href="https://en.wikipedia.org/wiki/Camel_case">camel-case</a> filename. For example, to use the function <code class="docutils literal"><span class="pre">dawn_add_target_clean_all</span></code> include the file <code class="docutils literal"><span class="pre">DawnAddTargetCleanAll</span></code>.</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">include</span><span class="p">(</span><span class="s">DawnAddTargetCleanAll</span><span class="p">)</span>
+<span class="nb">dawn_add_target_clean_all</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildAddCustomDummyTarget.html">msbuild_add_custom_dummy_target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildAddExecutable.html">msbuild_add_executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildAddLibrary.html">msbuild_add_library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildAddTargetClangFormat.html">msbuild_add_target_clang_format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildAddTargetCleanAll.html">msbuild_add_target_clean_all</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildAddUnittest.html">msbuild_add_unittest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCMakeInit.html">msbuild_cmake_init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCheckAndSetCXXFlag.html">msbuild_check_and_set_cxx_flag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCheckCXXFlag.html">msbuild_check_cxx_flag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCheckInSourceBuild.html">msbuild_check_in_source_build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCheckRequiredVars.html">msbuild_check_required_vars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCheckVarsAreDefined.html">msbuild_check_required_vars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCloneRepository.html">msbuild_clone_repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCombineLibraries.html">msbuild_combine_libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildConfigureFile.html">msbuild_configure_file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildCreatePackageString.html">msbuild_create_package_string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildExportPackage.html">msbuild_export_package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildFindPackage.html">msbuild_find_package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildFindPythonModule.html">msbuild_find_python_module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildGenerateCMakeScript.html">msbuild_generate_cmake_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildGetArchitectureInfo.html">dawn_get_architecture_info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildGetCacheVariables.html">msbuild_get_cache_variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildGetCompilerInfo.html">msbuid_get_compiler_info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildGetGitHeadRevision.html">msbuild_get_git_head_revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildGetPlatformInfo.html">msbuild_get_platform_info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildGetScriptDir.html">msbuild_get_script_dir</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildIncludeGuard.html">msbuild_include_guard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildMakeStringPair.html">msbuild_make_string_pair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildReportResult.html">msbuild_report_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildRequireArg.html">msbuild_require_arg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/msbuildSetCXXStandard.html">msbuild_set_cxx_standard</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Load settings for an external project via <a class="reference external" href="https://cmake.org/cmake/help/v3.0/command/find_package.html">find_package</a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/FindClang.html">FindClang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/FindLLVM.html">FindLLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/FindSphinx.html">FindSphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/Findbash.html">Findbash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/Findccache.html">Findccache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules/Findclang-format.html">Findclang-format</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cmake-modules/External_Boost.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Dawn — Compiler toolchain for high-level DSLs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, ETH Zurich and MeteoSwiss.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

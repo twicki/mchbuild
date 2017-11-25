@@ -1,0 +1,41 @@
+##===-------------------------------------------------------------------------------------------===##
+##                        _..._                                                          
+##                     .-'_..._''.                                    .---._______       
+##  __  __   ___     .' .'      '.\  .         /|                 .--.|   |\  ___ `'.    
+## |  |/  `.'   `.  / .'           .'|         ||                 |__||   | ' |--.\  \   
+## |   .-.  .-.   '. '            <  |         ||                 .--.|   | | |    \  '  
+## |  |  |  |  |  || |             | |         ||  __             |  ||   | | |     |  ' 
+## |  |  |  |  |  || |             | | .'''-.  ||/'__ '.   _    _ |  ||   | | |     |  | 
+## |  |  |  |  |  |. '             | |/.'''. \ |:/`  '. ' | '  / ||  ||   | | |     ' .' 
+## |  |  |  |  |  | \ '.          .|  /    | | ||     | |.' | .' ||  ||   | | |___.' /'  
+## |__|  |__|  |__|  '. `._____.-'/| |     | | ||\    / '/  | /  ||__||   |/_______.'/   
+##                     `-.______ / | |     | | |/\'..' /|   `'.  |    '---'\_______|/    
+##                              `  | '.    | '.'  `'-'` '   .'|  '/                      
+##                                 '---'   '---'         `-'  `--'                       
+##
+##  This file is distributed under the MIT License (MIT). 
+##  See LICENSE.txt for details.
+##
+##===------------------------------------------------------------------------------------------===##
+
+list(APPEND CMAKE_MODULE_PATH "@GTCLANG_MCHBUILD_SOURCE_DIR@/cmake")
+
+include(mchbuildGenerateCMakeScript)
+
+set(cmake_generated ${CMAKE_BINARY_DIR}/CMakeCache.txt
+                    ${CMAKE_BINARY_DIR}/Makefile
+                    ${CMAKE_BINARY_DIR}/CTestTestfile.cmake
+                    ${CMAKE_BINARY_DIR}/cmake_install.cmake
+                    ${CMAKE_BINARY_DIR}/CMakeFiles
+                    @mchbuild_add_target_clean_all_extra_args@
+)
+
+foreach(file ${cmake_generated})
+  if(EXISTS ${file})
+    message(STATUS "Removing ${file}")
+    file(REMOVE_RECURSE ${file})
+  endif()
+endforeach(file)
+
+mchbuild_generate_cmake_script(@CMAKE_SOURCE_DIR@ @CMAKE_BINARY_DIR@)
+
