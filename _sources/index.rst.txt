@@ -1,15 +1,15 @@
 .. only: not latex
 
-Dawn --- Compiler toolchain for high-level DSLs
-===============================================
+MCHBuild --- A builder infrastructure for cmake projects
+=========================================================
 
 .. only: not latex
 
     Contents:
 
 .. toctree::
-   :caption: The Basics
+   :caption: Index
    :maxdepth: 2
 
    cmake-modules
-
+   
