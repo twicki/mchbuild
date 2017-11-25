@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildAddLibrary.cmake
+.. cmake-module:: mchbuildAddLibrary.cmake

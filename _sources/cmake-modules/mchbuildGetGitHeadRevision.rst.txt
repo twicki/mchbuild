@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildGetGitHeadRevision.cmake
+.. cmake-module:: mchbuildGetGitHeadRevision.cmake

@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildRequireOnlyOneOf.cmake
+.. cmake-module:: mchbuildRequireOnlyOneOf.cmake

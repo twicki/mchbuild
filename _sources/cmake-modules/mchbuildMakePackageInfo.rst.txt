@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildMakePackageInfo.cmake
+.. cmake-module:: mchbuildMakePackageInfo.cmake

@@ -3,4 +3,4 @@
    :hidden:
    :maxdepth: 2
 
-.. cmake-module:: msbuildFindPythonModule.cmake
+.. cmake-module:: mchbuildFindPythonModule.cmake
