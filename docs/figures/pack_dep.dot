@@ -1,0 +1,12 @@
+digraph {
+  packA [shape=rectangle, color=darkslateblue];
+  packB [shape=rectangle, color=darkslateblue];
+  packC [shape=rectangle,color=darkslateblue];
+  packExt1 [color=bisque4];
+  packExt2 [color=bisque4];
+
+  packA -> packB;
+  packA -> packC;
+  packB -> packExt1;
+  packB -> packExt2;
+}

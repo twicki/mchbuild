@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &amp; Use &mdash; Dawn  documentation</title>
+  <title>User Manual &mdash; Dawn  documentation</title>
   
 
   
@@ -35,9 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Dawn  documentation" href="index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="cmake-modules/External_Boost.html"/>
-        <link rel="prev" title="MCHBuild — A builder infrastructure for cmake projects" href="index.html"/> 
+    <link rel="top" title="Dawn  documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -87,15 +85,15 @@
             
             
               <p class="caption"><span class="caption-text">Index</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation &amp; Use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#user-manual">User Manual</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-cmakelists-txt">Basic CMakeLists.txt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#setup-a-cmake-bundle">Setup a cmake bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-external-project-files">The external project files</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules.html">Installation &amp; Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules.html#user-manual">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cmake-modules.html#basic-cmakelists-txt">Basic CMakeLists.txt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmake-modules.html#setup-a-cmake-bundle">Setup a cmake bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmake-modules.html#the-external-project-files">The external project files</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#cmake-modules-reference">CMake Modules Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="cmake-modules.html#cmake-modules-reference">CMake Modules Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddCustomDummyTarget.html">mchbuild_add_custom_dummy_target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddExecutable.html">mchbuild_add_executable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmake-modules/mchbuildAddLibrary.html">mchbuild_add_library</a></li>
@@ -214,14 +212,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Installation &amp; Use</li>
+      <li>User Manual</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/thfabian/dawn/blob/master/docs/cmake-modules.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/thfabian/dawn/blob/master/docs/user_manual.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -235,19 +233,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installation-use">
-<h1>Installation &amp; Use<a class="headerlink" href="#installation-use" title="Permalink to this headline">¶</a></h1>
-<p>Add the <code class="docutils literal"><span class="pre">&lt;mchbuild&gt;/cmake/modules</span></code> directory to the <code class="docutils literal"><span class="pre">CMAKE_MODULE_PATH</span></code> to use the functions, macros and modules:</p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span> <span class="s">CMAKE_MODULE_PATH</span> <span class="s2">&quot;&lt;mchbuild&gt;/cmake/&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Note that all <cite>mchbuild</cite> projects contain a <code class="docutils literal"><span class="pre">mchbuild_cmake_init</span></code> macro which tries to find the CMake modules of MCHbuild.</p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">include</span><span class="p">(</span><span class="s">MCHbuildCMakeInit</span><span class="p">)</span>
-<span class="nb">mchbuild_cmake_init</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="user-manual">
+  <div class="section" id="user-manual">
 <h1>User Manual<a class="headerlink" href="#user-manual" title="Permalink to this headline">¶</a></h1>
 <p>MCHBuild is a cmake based library that provides ways to describe the dependencies of a project
 and resolves and builds all the depencies with a single cmake configuration  and build step.
@@ -257,7 +243,7 @@ dependencies).</p>
 <p>We will use the following figure to show how to build the dependency chain shown in the picture:</p>
 <div class="figure" id="id1">
 <img alt="_images/pack_dep.png" src="_images/pack_dep.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Example of dependency chain of packages.</span></p>
+<p class="caption"><span class="caption-text">Example of dependency chain of packages.</span></p>
 </div>
 <p>In the example we assume <code class="docutils literal"><span class="pre">packA</span></code>, <code class="docutils literal"><span class="pre">packB</span></code>, <code class="docutils literal"><span class="pre">packC</span></code> are software packages of our organization
 where we will directly use MCHBuild from the cmake configuration of the projects, while
@@ -361,64 +347,6 @@ project</p>
 <h2>The external project files<a class="headerlink" href="#the-external-project-files" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
-<div class="section" id="cmake-modules-reference">
-<h1>CMake Modules Reference<a class="headerlink" href="#cmake-modules-reference" title="Permalink to this headline">¶</a></h1>
-<p>This section describes the CMake functionailty of MCHBuild.</p>
-<p>Each function and macro uses a <a class="reference external" href="https://en.wikipedia.org/wiki/Snake_case">snake-case</a> identifier and is defined in a separate file using the corresponding <a class="reference external" href="https://en.wikipedia.org/wiki/Camel_case">camel-case</a> filename. For example, to use the function <code class="docutils literal"><span class="pre">mchbuild_add_target_clean_all</span></code> include the file <code class="docutils literal"><span class="pre">mchbuildAddTargetCleanAll</span></code> as follows.</p>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">include</span><span class="p">(</span><span class="s">DawnAddTargetCleanAll</span><span class="p">)</span>
-<span class="nb">mchbuild_add_target_clean_all</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>List of all functions and macros</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildAddCustomDummyTarget.html">mchbuild_add_custom_dummy_target</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildAddExecutable.html">mchbuild_add_executable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildAddLibrary.html">mchbuild_add_library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildAddTargetClangFormat.html">mchbuild_add_target_clang_format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildAddTargetCleanAll.html">mchbuild_add_target_clean_all</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildAddUnittest.html">mchbuild_add_unittest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCMakeInit.html">mchbuild_cmake_init</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCheckAndSetCXXFlag.html">mchbuild_check_and_set_cxx_flag</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCheckCXXFlag.html">mchbuild_check_cxx_flag</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCheckInSourceBuild.html">mchbuild_check_in_source_build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCheckRequiredVars.html">mchbuild_check_required_vars</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCheckVarsAreDefined.html">mchbuild_check_vars_are_defined</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCloneRepository.html">mchbuild_clone_repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCombineLibraries.html">mchbuild_combine_libraries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildConfigureFile.html">mchbuild_configure_file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildCreatePackageString.html">mchbuild_create_package_string</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildEnableFullRPATH.html">mchbuild_enable_full_rpath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildExportOptions.html">mchbuild_export_options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildExportPackage.html">mchbuild_export_package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildFindPackage.html">mchbuild_find_package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildFindPythonModule.html">mchbuild_find_python_module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildGenerateCMakeScript.html">mchbuild_generate_cmake_script</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildGetArchitectureInfo.html">dawn_get_architecture_info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildGetCacheVariables.html">mchbuild_get_cache_variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildGetCompilerInfo.html">msbuid_get_compiler_info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildGetGitHeadRevision.html">mchbuild_get_git_head_revision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildGetPlatformInfo.html">mchbuild_get_platform_info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildGetScriptDir.html">mchbuild_get_script_dir</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildIncludeGuard.html">mchbuild_include_guard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildMakeStringPair.html">mchbuild_make_string_pair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildReportResult.html">mchbuild_report_result</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildRequireArg.html">mchbuild_require_arg</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/mchbuildSetCXXStandard.html">mchbuild_set_cxx_standard</a></li>
-</ul>
-</div>
-<p>Load settings for an external project via <a class="reference external" href="https://cmake.org/cmake/help/v3.0/command/find_package.html">find_package</a>.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/FindClang.html">FindClang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/FindLLVM.html">FindLLVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/FindSphinx.html">FindSphinx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/Findbash.html">Findbash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/Findccache.html">Findccache</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmake-modules/Findclang-format.html">Findclang-format</a></li>
-</ul>
-</div>
-</div>
 
 
            </div>
@@ -427,15 +355,6 @@ project</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cmake-modules/External_Boost.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="MCHBuild — A builder infrastructure for cmake projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

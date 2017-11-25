@@ -1,16 +1,11 @@
-CMake Modules
-=============
-
-This section describes the CMake functionailty of Dawn and it's subprojects.
-
-Installation
-************
+Installation & Use
+===================
 
 Add the ``<mchbuild>/cmake/modules`` directory to the ``CMAKE_MODULE_PATH`` to use the functions, macros and modules:
 
 .. code-block:: cmake
 
-  list(APPEND CMAKE_MODULE_PATH "<mchbuild>/cmake/modules")
+  list(APPEND CMAKE_MODULE_PATH "<mchbuild>/cmake/")
 
 Note that all `mchbuild` projects contain a ``mchbuild_cmake_init`` macro which tries to find the CMake modules of MCHbuild.
 
@@ -19,20 +14,32 @@ Note that all `mchbuild` projects contain a ``mchbuild_cmake_init`` macro which 
   include(MCHbuildCMakeInit)
   mchbuild_cmake_init()
 
+
+.. include:: user_manual.rst
+
+
+CMake Modules Reference
+=========================
+
+This section describes the CMake functionailty of MCHBuild.
+
 Functions & Macros
 ******************
 
-Each function and macro uses a `snake-case <https://en.wikipedia.org/wiki/Snake_case>`_ identifier and is defined in a spereate file using he corresponding `camel-case <https://en.wikipedia.org/wiki/Camel_case>`_ filename. For example, to use the function ``dawn_add_target_clean_all`` include the file ``DawnAddTargetCleanAll``.
+Each function and macro uses a `snake-case <https://en.wikipedia.org/wiki/Snake_case>`_ identifier and is defined in a separate file using the corresponding `camel-case <https://en.wikipedia.org/wiki/Camel_case>`_ filename. For example, to use the function ``mchbuild_add_target_clean_all`` include the file ``mchbuildAddTargetCleanAll`` as follows.
 
 .. code-block:: cmake
 
-  include(DawnAddTargetCleanAll)
-  dawn_add_target_clean_all()
+    include(DawnAddTargetCleanAll)
+    mchbuild_add_target_clean_all()
+
+List of all functions and macros
 
 .. toctree::
   :maxdepth: 1
 
 __function_and_macros__
+
 
 Modules
 *******
