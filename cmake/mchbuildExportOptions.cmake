@@ -23,7 +23,7 @@ mchbuild_include_guard()
 
 #.rst:
 # mchbuild_export_options
-# -------------------
+# -------------------------
 #
 # Export a list of options in the variable ``<NAME>_OPTIONS`` which can be accessed by meta
 # projects.

@@ -20,31 +20,30 @@
 
 include(CMakeParseArguments)
 
+#.rst:
 # mchbuild_set_external_properties
-# ------------------------
+# ------------------------------------
 #
-# Try to find the package <PACKAGE>. If the package cannot be found via find_package, the 
-# file "External_<PACKAGE>" will be included which should define a target <PACKAGE> (in all 
-# lower case) which is used to built the package.
+# Set directories associated to an external project used by mchbuild. 
+# The function is used to impose a convention for directories of external projects
+# where they will be installed and built. 
 #
-# The option USE_SYSTEM_<PACKAGE> indicates if the <PACKAGE> (all uppercase) is built or 
-# supplied by the system. Note that USE_SYSTEM_<PACKAGE> does not honor the user setting if 
-# the package cannot be found (i.e it will build it regardlessly).
+# .. code-block:: cmake
 #
-#    PACKAGE:STRING=<>        - Name of the package (has to be the same name as used in 
-#                               find_package).
-#    PACKAGE_ARGS:LIST=<>     - Arguments passed to find_package.
-#    FORWARD_VARS:LIST=<>     - List of variables which are appended (if defined) to the 
-#                               MCHBUILD_THIRDPARTY_CMAKE_ARGS. This are usually the variables 
-#                               which have an effect on the find_package call. For example, we may 
-#                               want to forward BOOST_ROOT if it was supplied by the user. 
-#    REQUIRED_VARS:LIST=<>    - Variables which need to be TRUE to consider the package as 
-#                               found. By default we check that <PACKAGE>_FOUND is TRUE.
-#    VERSION_VAR:STRING=<>    - Name of the variable which is defined by the find_package command
-#                               to provide the version. By default we use <PACKAGE>_VERSION (or a 
-#                               variation thereof).
-#    BUILD_VERSION:STRING=<>  - Version of the package which is built (if required)
-#    DEPENDS:LIST=<>          - Dependencies of this package.
+#   mchbuild_set_external_properties(NAME <pkg> INSTALL_DIR <install_dir_var> 
+#      SOURCE_DIR <source_dir_var> BINARY_DIR <binary_dir_var>)
+#
+# ``NAME``
+# Name of the package
+#
+# ``INSTALL_DIR`` 
+# variable that will hold the installation directory
+#
+# ``SOURCE_DIR`` 
+# variable that will hold the source directory
+#
+# ``BINARY_DIR`` 
+# variable that will hold the building directory
 #
 function(mchbuild_set_external_properties)
   set(options)

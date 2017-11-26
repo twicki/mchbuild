@@ -18,6 +18,26 @@
 ##
 ##===------------------------------------------------------------------------------------------===##
 
+#.rst:
+# FindGridTools
+# ----------------
+#
+# .. code-block:: cmake
+#
+#   find_package(GridTools [REQUIRED] [QUIET])
+#
+# Find the GridTools include paths.
+#
+# Result Variables
+# ^^^^^^^^^^^^^^^^
+#
+# Defines the following variables:
+#
+# ``GridTools_FOUND``                    
+#   True if GridTools was found.
+# ``GRIDTOOLS_INCLUDE_DIRS``
+#   Where to find GridTools includes.
+#
 if( NOT GRIDTOOLS_FOUND )
 
   find_path( GRIDTOOLS_INCLUDE_DIR 

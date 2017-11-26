@@ -121,12 +121,12 @@ numfig = True
 
 # -- Options for HTML output ----------------------------------------------
 
-html_theme = "sphinxdoc"
-#html_theme_options = {
-#  'collapse_navigation': False,
-#  'display_version': True,
-#  'navigation_depth': 3,
-#}
+html_theme = "sphinx_rtd_theme"
+html_theme_options = {
+  'collapse_navigation': False,
+  'display_version': True,
+  'navigation_depth': 3,
+}
 
 html_theme_path = ["_themes", ]
 

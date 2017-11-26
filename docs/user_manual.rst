@@ -67,7 +67,7 @@ The bundle file should contain the following cmake blocks:
     mchbuild_find_package(
       PACKAGE packB
       REQUIRED_VAR packB_DIR
-      DEPENDS "packExt1" "packExt2"
+      DEPENDS "packext1" "packext2"
       ADDITIONAL
         GIT_REPOSITORY "https://github.com/Meteoswiss-APN/packB.git"
         GIT_TAG "develop" 
@@ -103,7 +103,7 @@ The bundle file should contain the following cmake blocks:
       PACKAGE packA
       FORWARD_VARS 
         BINARY_DIR packA_binary_dir
-      DEPENDS "packB" "packC"
+      DEPENDS "packa" "packc"
       ADDITIONAL
         SOURCE_DIR "${CMAKE_SOURCE_DIR}/../"
         MCHBUILD_ROOT "${GTCLANG_MCHBUILD_SOURCE_DIR}"
@@ -142,11 +142,14 @@ that contains the cmake functionality to download and compile the package.
 
 In the following we describe the main components of a ``External_<pack>.cmake``:
 
+* First of all notice that each ``External_<pack>.cmake`` should define a target, used later in the bundle files to describe the 
+  dependencies of each package. The convention is that the target is the name of the package all letter lower case.
+
 * Get the source,build and install directories for the compilation of the dependent project using the following mchbuild macro
 
   .. code-block:: cmake
 
-      mchbuild_set_external_properties(NAME "packA" 
+      mchbuild_set_external_properties(NAME "packa" 
         INSTALL_DIR install_dir 
         SOURCE_DIR source_dir
         BINARY_DIR binary_dir
@@ -158,7 +161,7 @@ In the following we describe the main components of a ``External_<pack>.cmake``:
   .. code-block:: cmake
 
     if(ARG_GIT_REPOSITORY)
-      ExternalProject_Add(packA
+      ExternalProject_Add(packa
         PREFIX packA-prefix
         GIT_REPOSITORY ${ARG_GIT_REPOSITORY}
         GIT_TAG ${ARG_GIT_TAG}
@@ -167,7 +170,7 @@ In the following we describe the main components of a ``External_<pack>.cmake``:
         CMAKE_ARGS ${ARG_CMAKE_ARGS}
       )
     else()
-      ExternalProject_Add(packA
+      ExternalProject_Add(packa
         SOURCE_DIR ${ARG_SOURCE_DIR}
         INSTALL_DIR "${install_dir}"
         CMAKE_ARGS ${ARG_CMAKE_ARGS} 
