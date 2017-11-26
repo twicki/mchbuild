@@ -56,9 +56,8 @@ The bundle file should contain the following cmake blocks:
 
   include(mchbuildCloneRepository)
 
-  set(PACKA_MCHBUILD_GIT_URL "https:///github.com/Meteoswiss-APN/mchbuild.git"
-    CACHE PATH "URL of the dawn git repository to clone")
-  set(PACKA_MCHBUILD_GIT_BRANCH "master" CACHE STRING "Branch of the dawn git repository to clone")
+  set(PACKA_MCHBUILD_GIT_URL "https:///github.com/Meteoswiss-APN/mchbuild.git" CACHE PATH "")
+  set(PACKA_MCHBUILD_GIT_BRANCH "master" CACHE STRING "")
   mchbuild_clone_repository(NAME mchbuild URL ${PACKA_MCHBUILD_GIT_URL} BRANCH ${PACKA_MCHBUILD_GIT_BRANCH} SOURCE_DIR PACKA_MCHBUILD_SOURCE_DIR )
 
 * We can add dependencies (other mchbuild projects) using the mchbuild_find_package:
