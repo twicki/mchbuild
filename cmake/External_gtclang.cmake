@@ -68,6 +68,7 @@ function(mchbuild_external_package)
       SOURCE_SUBDIR "bundle"
       INSTALL_DIR "${install_dir}"
       CMAKE_ARGS ${ARG_CMAKE_ARGS} 
+    )
   else()
     ExternalProject_Add(gtclang
       SOURCE_DIR ${ARG_SOURCE_DIR}
