@@ -51,13 +51,23 @@ function(mchbuild_external_package)
 
   # C++ protobuf
   if(ARG_GIT_REPOSITORY)
+    mchbuild_clone_repository(NAME gtclang URL ${ARG_GIT_REPOSITORY} BRANCH ${ARG_GIT_TAG} SOURCE_DIR source_dir )
+
+    set(options_file ${source_dir}/cmake/GTClangOptions.cmake)
+    if(EXISTS ${options_file})
+      include(${options_file})
+    endif()
+
+    foreach(option ${GTCLANG_OPTIONS})
+      list(APPEND ARG_CMAKE_ARGS "-D${option}:BOOL=${${option}}")
+    endforeach()
+
     ExternalProject_Add(gtclang
       PREFIX gtclang-prefix
-      GIT_REPOSITORY ${ARG_GIT_REPOSITORY}
-      GIT_TAG ${ARG_GIT_TAG}
+      SOURCE_DIR ${ARG_SOURCE_DIR}
+      SOURCE_SUBDIR "bundle"
       INSTALL_DIR "${install_dir}"
-      CMAKE_ARGS ${ARG_CMAKE_ARGS}
-    )
+      CMAKE_ARGS ${ARG_CMAKE_ARGS} 
   else()
     ExternalProject_Add(gtclang
       SOURCE_DIR ${ARG_SOURCE_DIR}
