@@ -60,7 +60,7 @@ function(mchbuild_set_external_properties)
     set(${ARG_INSTALL_DIR} "${PROJECT_BINARY_DIR}/prefix/${ARG_NAME}" PARENT_SCOPE)
   endif()
   if(DEFINED ARG_SOURCE_DIR) 
-    set(${ARG_SOURCE_DIR} "${CMAKE_CURRENT_BINARY_DIR}/${ARG_NAME}" PARENT_SCOPE)
+    set(${ARG_SOURCE_DIR} "${PROJECT_BINARY_DIR}/${ARG_NAME}-prefix/src/${ARG_NAME}" PARENT_SCOPE)
   endif()
   #Assuming we always use the prefix mode 
   if(DEFINED ARG_BINARY_DIR)

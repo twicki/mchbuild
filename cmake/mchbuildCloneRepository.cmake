@@ -52,13 +52,14 @@ function(mchbuild_clone_repository)
   set(multi_value_args)
   cmake_parse_arguments(ARG "${options}" "${one_value_args}" "${multi_value_args}" ${ARGN})
 
-  mchbuild_require_arg("ARG_UNPARSE_ARGUMENTS" ${ARG_UNPARSE_ARGUMENTS})
   mchbuild_require_arg("ARG_NAME" ${ARG_NAME})
   mchbuild_require_arg("ARG_SOURCE_DIR" ${ARG_SOURCE_DIR})
 
   string(TOUPPER ${ARG_NAME} upper_name)
-  set(source_dir "${CMAKE_SOURCE_DIR}/${ARG_NAME}")
 
+  if("${source_dir}" STREQUAL "")
+    set(source_dir "${CMAKE_SOURCE_DIR}/${ARG_NAME}")
+  endif()
   # Check if repository exists
   if(EXISTS "${source_dir}")
     set("${ARG_SOURCE_DIR}" "${source_dir}" PARENT_SCOPE)

@@ -22,6 +22,7 @@ include(ExternalProject)
 include(mchbuildSetExternalProperties)
 include(mchbuildRequireOnlyOneOf)
 include(mchbuildCheckRequiredVars)
+include(mchbuildCloneRepository)
 
 set(DIR_OF_PROTO_EXTERNAL ${CMAKE_CURRENT_LIST_DIR})  
 
@@ -52,13 +53,23 @@ function(mchbuild_external_package)
   set(ARG_CMAKE_ARGS ${ARG_CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>)
   # C++ protobuf
   if(ARG_GIT_REPOSITORY)
+    mchbuild_clone_repository(NAME dawn_src URL ${ARG_GIT_REPOSITORY} BRANCH ${ARG_GIT_TAG} SOURCE_DIR source_dir )
+
+    set(options_file ${source_dir}/cmake/DawnOptions.cmake)
+    if(EXISTS ${options_file})
+      include(${options_file})
+    endif()
+
+    foreach(option ${DAWN_OPTIONS})
+      list(APPEND ARG_CMAKE_ARGS "-D${option}:BOOL=${${option}}")
+    endforeach()
+
     ExternalProject_Add(dawn
       PREFIX dawn-prefix
-      GIT_REPOSITORY ${ARG_GIT_REPOSITORY}
-      GIT_TAG ${ARG_GIT_TAG}
+      SOURCE_DIR ${ARG_SOURCE_DIR}
       SOURCE_SUBDIR "bundle"
       INSTALL_DIR "${install_dir}"
-      CMAKE_ARGS ${ARG_CMAKE_ARGS}
+      CMAKE_ARGS ${ARG_CMAKE_ARGS} 
     )
   else()
     ExternalProject_Add(dawn
