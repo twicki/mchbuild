@@ -261,5 +261,5 @@ latex_documents = [
 
 # -- Options for edit_on_github ----------------------------------------------
 
-edit_on_github_project = 'thfabian/dawn'
+edit_on_github_project = 'MeteoSwiss-APN/mchbuild'
 edit_on_github_branch = 'master'
