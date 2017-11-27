@@ -58,6 +58,8 @@ function(mchbuild_external_package)
     set(options_file ${source_dir}/cmake/DawnOptions.cmake)
     if(EXISTS ${options_file})
       include(${options_file})
+    else()
+      message(WARNING "Could not find DawnOptions.cmake. Dawn options will not be propagated to the top bundle project")
     endif()
 
     foreach(option ${DAWN_OPTIONS})
