@@ -77,6 +77,7 @@ List of all functions and macros
   /cmake-modules/mchbuildGetPlatformInfo
   /cmake-modules/mchbuildGetScriptDir
   /cmake-modules/mchbuildIncludeGuard
+  /cmake-modules/mchbuildInit
   /cmake-modules/mchbuildMakeCMakeScript
   /cmake-modules/mchbuildMakePackageInfo
   /cmake-modules/mchbuildMakeStringPair

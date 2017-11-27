@@ -59,8 +59,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'MCHBuild'
-copyright = '2017, MeteoSwiss'
+project = 'Dawn'
+copyright = '2017, ETH Zurich and MeteoSwiss'
 author = 'Fabian Thuering, Carlos Osuna and Tobias Wicky'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -212,7 +212,7 @@ html_show_sourcelink = False
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MCHBuilddoc'
+htmlhelp_basename = 'Dawndoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -234,7 +234,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'mchbuild.tex', 'MCHBuild Documentation',
+  (master_doc, 'dawn.tex', 'Dawn Documentation',
    'Fabian Thuering, Carlos Osuna and Tobias Wicky\\\\~\\\\ETH Zurich and MeteoSwiss', 'manual'),
 ]
 
@@ -261,5 +261,5 @@ latex_documents = [
 
 # -- Options for edit_on_github ----------------------------------------------
 
-edit_on_github_project = 'MeteoSwiss-APN/mchbuild'
+edit_on_github_project = 'thfabian/dawn'
 edit_on_github_branch = 'master'

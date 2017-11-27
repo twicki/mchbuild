@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Findbash &mdash; Dawn  documentation</title>
+  <title>mchbuild_init &mdash; Dawn  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Dawn  documentation" href="../index.html"/>
         <link rel="up" title="Installation &amp; Use" href="../cmake-modules.html"/>
-        <link rel="next" title="Findccache" href="Findccache.html"/>
-        <link rel="prev" title="FindSphinx" href="FindSphinx.html"/> 
+        <link rel="next" title="&lt;no title&gt;" href="mchbuildMakeCMakeScript.html"/>
+        <link rel="prev" title="mchbuild_include_guard" href="mchbuildIncludeGuard.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -132,7 +132,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mchbuildGetPlatformInfo.html">mchbuild_get_platform_info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mchbuildGetScriptDir.html">mchbuild_get_script_dir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mchbuildIncludeGuard.html">mchbuild_include_guard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mchbuildInit.html">mchbuild_init</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mchbuild_init</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mchbuildMakeStringPair.html">mchbuild_make_string_pair</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mchbuildMakeStringPair.html#example">Example</a></li>
 </ul>
@@ -161,9 +161,9 @@
 <li class="toctree-l3"><a class="reference internal" href="FindSphinx.html#hints">Hints</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Findbash</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#result-variables">Result Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hints">Hints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Findbash.html">Findbash</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Findbash.html#result-variables">Result Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Findbash.html#hints">Hints</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Findccache.html">Findccache</a><ul>
@@ -224,14 +224,14 @@
         
           <li><a href="../cmake-modules.html">Installation &amp; Use</a> &raquo;</li>
         
-      <li>Findbash</li>
+      <li>mchbuild_init</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/thfabian/dawn/blob/master/docs/cmake-modules/Findbash.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/thfabian/dawn/blob/master/docs/cmake-modules/mchbuildInit.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -247,25 +247,11 @@
             
   <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="findbash">
-<h1>Findbash<a class="headerlink" href="#findbash" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">find_package</span><span class="p">(</span><span class="s">bash</span> <span class="s">[REQUIRED]</span> <span class="s">[QUIET]</span><span class="p">)</span>
+<div class="section" id="mchbuild-init">
+<h1>mchbuild_init<a class="headerlink" href="#mchbuild-init" title="Permalink to this headline">¶</a></h1>
+<p>Function to initialize mchbuild infrastructure</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">mchbuild_init</span><span class="p">()</span>
 </pre></div>
-</div>
-<p>This module locates <a class="reference external" href="https://www.gnu.org/software/bash/">bash</a>. <code class="docutils literal"><span class="pre">BASH_FOUND</span></code> will report if bash has been found.</p>
-<div class="section" id="result-variables">
-<h2>Result Variables<a class="headerlink" href="#result-variables" title="Permalink to this headline">¶</a></h2>
-<p>Defines the following variables:</p>
-<dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">BASH_FOUND</span></code></dt>
-<dd>System has bash.</dd>
-<dt><code class="docutils literal"><span class="pre">BASH_EXECUTABLE</span></code></dt>
-<dd>Path to the bash executable.</dd>
-</dl>
-</div>
-<div class="section" id="hints">
-<h2>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h2>
-<p>You can directly set <code class="docutils literal"><span class="pre">BASH_EXECUTABLE</span></code> if the module has trouble finding bash.</p>
 </div>
 </div>
 
@@ -279,10 +265,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Findccache.html" class="btn btn-neutral float-right" title="Findccache" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mchbuildMakeCMakeScript.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="FindSphinx.html" class="btn btn-neutral" title="FindSphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mchbuildIncludeGuard.html" class="btn btn-neutral" title="mchbuild_include_guard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

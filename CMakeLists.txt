@@ -36,11 +36,11 @@ project(mchbuild NONE)
 cmake_minimum_required(VERSION 3.3)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 
 include(mchbuildAddTargetCleanAll)
 include(mchbuildGenerateCMakeScript)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 set(MCHBUILD_DOCUMENTATION ON CACHE BOOL "Build documentation" FORCE)
 
