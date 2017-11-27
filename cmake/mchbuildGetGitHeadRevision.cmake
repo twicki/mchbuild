@@ -80,7 +80,7 @@ function(mchbuild_get_git_head_revision HEAD_REF HEAD_HASH)
 
   mchbuild_get_script_dir(script_dir)
   set(input_script ${script_dir}/mchbuildGetGitHeadRevision-Script.cmake.in)
-  set(output_script ${CMAKE_BINARY_DIR}/CMakeFiles/git-data/cmake/DawnGetGitHeadRevision-Script.cmake)
+  set(output_script ${CMAKE_BINARY_DIR}/CMakeFiles/git-data/cmake/mchbuildGetGitHeadRevision-Script.cmake)
 
   # Configure the script
   set(in_head_file ${head_file})
