@@ -28,6 +28,9 @@ include(mchbuildGetPlatformInfo)
 include(mchbuildMakeStringPair)
 include(mchbuildReportResult)
 
+#we add the modules directory of mchbuild
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/modules")
+
 #.rst:
 # mchbuild_init
 # ----------------
