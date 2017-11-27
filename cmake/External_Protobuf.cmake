@@ -103,6 +103,4 @@ function(mchbuild_external_package)
   ExternalProject_Get_Property(protobuf install_dir)
   set(Protobuf_DIR "${install_dir}/lib/cmake/protobuf" CACHE INTERNAL "")
 
-  list(APPEND GTCLANG_ALL_THIRDPARTY_CMAKE_ARGS "-DProtobuf_DIR:PATH=${Protobuf_DIR}")
-
 endfunction()
