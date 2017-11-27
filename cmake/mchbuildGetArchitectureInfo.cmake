@@ -23,7 +23,7 @@ mchbuild_include_guard()
 
 #.rst:
 # mchbuild_get_architecture_info
-# --------------------------
+# -------------------------------
 #
 # Get the identification of the architecture.
 #
