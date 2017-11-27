@@ -22,7 +22,7 @@ include(mchbuildIncludeGuard)
 mchbuild_include_guard()
 
 #.rst:
-# dawn_get_architecture_info
+# mchbuild_get_architecture_info
 # --------------------------
 #
 # Get the identification of the architecture.

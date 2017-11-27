@@ -109,7 +109,6 @@ macro(mchbuild_find_package)
     # we check that all required vars are properly set and forwarded here
     mchbuild_check_vars_are_defined(ARG_REQUIRED_VARS)
   else()
-    set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${dawn_DIR})
     # Check if the system has the package
     find_package(${ARG_PACKAGE} ${ARG_PACKAGE_ARGS} QUIET)
     # Check if all the required variables are set
