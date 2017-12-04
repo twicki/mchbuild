@@ -20,7 +20,8 @@
 
 include(ExternalProject)
 include(mchbuildSetExternalProperties)
-include (mchbuildRequireOnlyOneOf)
+include(mchbuildRequireOnlyOneOf)
+include(mchbuildCheckRequiredVars)
 
 set(DIR_OF_PROTO_EXTERNAL ${CMAKE_CURRENT_LIST_DIR})  
 
@@ -43,7 +44,7 @@ function(mchbuild_external_package)
     INSTALL_DIR install_dir 
     SOURCE_DIR source_dir
     BINARY_DIR binary_dir
-)
+  )
 
   list(APPEND ARG_CMAKE_ARGS "-DMCHBUILD_ROOT=${ARG_MCHBUILD_ROOT}")
   # set the install path to bundle project install dir
