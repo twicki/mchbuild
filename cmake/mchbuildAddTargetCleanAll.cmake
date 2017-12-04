@@ -43,6 +43,8 @@ include(mchbuildGetScriptDir)
 # ``dirs``
 #   Addtional files or directories to remove.
 #
+set(MCHBUILD_CMAKE_DIR "${CMAKE_CURRENT_LIST_DIR}" INTERNAL)
+
 function(mchbuild_add_target_clean_all)
   mchbuild_get_script_dir(script_dir)
   set(mchbuild_add_target_clean_all_extra_args ${ARGN})
