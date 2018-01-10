@@ -50,8 +50,10 @@ macro(mchbuild_generate_cmake_script CMAKE_LISTS_DIR BUILD_DIR)
       set(script_args "${script_args} ${CMAKE_MATCH_1}=\"${CMAKE_MATCH_2}\"")
     endif()
   endforeach()
-  
-  set(script_args "-G \"${CMAKE_GENERATOR}\" ${script_args}")
+ 
+  if(NOT ${CMAKE_GENERATOR} STREQUAL "") 
+    set(script_args "-G \"${CMAKE_GENERATOR}\" ${script_args}")
+  endif()
 
   file(WRITE ${BUILD_DIR}/rerun-cmake.sh 
        "#!/usr/bin/env bash\n${CMAKE_COMMAND} ${CMAKE_LISTS_DIR} ${script_args}\n")

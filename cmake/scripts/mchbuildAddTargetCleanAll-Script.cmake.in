@@ -18,7 +18,7 @@
 ##
 ##===------------------------------------------------------------------------------------------===##
 
-list(APPEND CMAKE_MODULE_PATH "@GTCLANG_MCHBUILD_SOURCE_DIR@/cmake")
+list(APPEND CMAKE_MODULE_PATH "@MCHBUILD_CMAKE_DIR@/cmake")
 
 include(mchbuildGenerateCMakeScript)
 
