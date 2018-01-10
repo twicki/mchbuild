@@ -53,7 +53,7 @@ function(mchbuild_external_package)
     SOURCE_DIR source_dir)
 
   # Python protobuf
-  find_package(PythonInterp 3.5 REQUIRED)
+  find_package(PythonInterp 3.4 REQUIRED)
   find_package(bash REQUIRED)
 
   set(PROTOBUF_PROTOC "${install_dir}/bin/protoc")
