@@ -70,5 +70,6 @@ function(mchbuild_external_package)
 
   ExternalProject_Get_Property(boost install_dir)
   set(BOOST_ROOT "${install_dir}" CACHE INTERNAL "")
+  set(Boost_INCLUDE_DIR ${BOOST_ROOT}/include)
 
 endfunction()
