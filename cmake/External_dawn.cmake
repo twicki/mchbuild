@@ -76,7 +76,7 @@ function(mchbuild_external_package)
   else()
     ExternalProject_Add(dawn
       SOURCE_DIR ${ARG_SOURCE_DIR}
-      INSTALL_DIR "${install_dir}"
+      INSTALL_DIR  ${CMAKE_INSTALL_PREFIX}
       CMAKE_ARGS ${ARG_CMAKE_ARGS} 
     )
   endif()
