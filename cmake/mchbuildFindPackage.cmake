@@ -47,6 +47,8 @@ include(mchbuildCheckVarsAreDefined)
 # ``PACKAGE:STRING``
 #   - Name of the package (has to be the same name as used in 
 #                               find_package).
+# ``NO_DEFAULT_PATH:`` 
+#   - This specifies that no system paths should not be used to find packages
 # ``PACKAGE_ARGS:LIST``
 #   - Arguments passed to find_package.
 # ``REQUIRED_VARS:LIST``
@@ -60,7 +62,7 @@ include(mchbuildCheckVarsAreDefined)
 #   - Version of the package which is built (if required)
 #
 macro(mchbuild_find_package)
-  set(options)
+  set(options NO_DEFAULT_PATH)
   set(one_value_args PACKAGE BUILD_VERSION VERSION_VAR)
   set(multi_value_args PACKAGE_ARGS REQUIRED_VARS FORWARD_VARS DEPENDS ADDITIONAL )
   cmake_parse_arguments(ARG "${options}" "${one_value_args}" "${multi_value_args}" ${ARGN})
@@ -110,7 +112,13 @@ macro(mchbuild_find_package)
     mchbuild_check_vars_are_defined(ARG_REQUIRED_VARS)
   else()
     # Check if the system has the package
-    find_package(${ARG_PACKAGE} ${ARG_PACKAGE_ARGS} QUIET)
+
+    if(${ARG_NO_DEFAULT_PATH})
+      set(find_args NO_DEFAULT_PATH QUIET)
+    else()
+      set(find_args QUIET)
+    endif()
+    find_package(${ARG_PACKAGE} ${ARG_PACKAGE_ARGS} ${find_args})
     # Check if all the required variables are set
     set(required_vars_ok TRUE)
     set(missing_required_vars)
