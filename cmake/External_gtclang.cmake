@@ -74,6 +74,7 @@ function(mchbuild_external_package)
     ExternalProject_Add(gtclang
       SOURCE_DIR ${ARG_SOURCE_DIR}
       INSTALL_DIR  ${CMAKE_INSTALL_PREFIX}
+      BUILD_ALWAYS 1
       CMAKE_ARGS ${ARG_CMAKE_ARGS}
     )
   endif()
