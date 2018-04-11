@@ -71,14 +71,20 @@ function(mchbuild_external_package)
       SOURCE_DIR ${ARG_SOURCE_DIR}
       SOURCE_SUBDIR "bundle"
       INSTALL_DIR "${install_dir}"
+      BUILD_ALWAYS 1
       CMAKE_ARGS ${ARG_CMAKE_ARGS} 
     )
+
+    set(dawn_DIR "${install_dir}/cmake" PARENT_SCOPE)
   else()
     ExternalProject_Add(dawn
       SOURCE_DIR ${ARG_SOURCE_DIR}
-      INSTALL_DIR "${install_dir}"
+      INSTALL_DIR  ${CMAKE_INSTALL_PREFIX}
+      BUILD_ALWAYS 1
       CMAKE_ARGS ${ARG_CMAKE_ARGS} 
     )
+
+    set(dawn_DIR "${CMAKE_INSTALL_PREFIX}/cmake" PARENT_SCOPE)
   endif()
 
   if(DEFINED ARG_FORWARD_VARS)
@@ -95,6 +101,5 @@ function(mchbuild_external_package)
 
   endif()
   mchbuild_check_required_vars(SET_VARS dawn_DIR REQUIRED_VARS ${ARG_REQUIRED_VARS})
-  set(dawn_DIR "${binary_dir}/prefix/dawn/cmake" CACHE INTERNAL "")
 
 endfunction()

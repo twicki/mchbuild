@@ -20,7 +20,8 @@
 
 include(ExternalProject)
 include(mchbuildSetExternalProperties)
-include (mchbuildRequireOnlyOneOf)
+include(mchbuildRequireOnlyOneOf)
+include(mchbuildCheckRequiredVars)
 
 set(DIR_OF_PROTO_EXTERNAL ${CMAKE_CURRENT_LIST_DIR})  
 
@@ -43,7 +44,7 @@ function(mchbuild_external_package)
     INSTALL_DIR install_dir 
     SOURCE_DIR source_dir
     BINARY_DIR binary_dir
-)
+  )
 
   list(APPEND ARG_CMAKE_ARGS "-DMCHBUILD_ROOT=${ARG_MCHBUILD_ROOT}")
   # set the install path to bundle project install dir
@@ -72,7 +73,8 @@ function(mchbuild_external_package)
   else()
     ExternalProject_Add(gtclang
       SOURCE_DIR ${ARG_SOURCE_DIR}
-      INSTALL_DIR "${install_dir}"
+      INSTALL_DIR  ${CMAKE_INSTALL_PREFIX}
+      BUILD_ALWAYS 1
       CMAKE_ARGS ${ARG_CMAKE_ARGS}
     )
   endif()
