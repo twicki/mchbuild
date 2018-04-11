@@ -47,7 +47,7 @@ if( NOT GRIDTOOLS_FOUND )
                 "${GRIDTOOLS_PATH}"
                 "${GRIDTOOLS_ROOT}"
                 ENV GRIDTOOLS_PATH 
-            PATH_SUFFIXES include
+            PATH_SUFFIXES include/gridtools
   )
 
   include(FindPackageHandleStandardArgs)
