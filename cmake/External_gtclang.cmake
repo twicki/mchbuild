@@ -22,6 +22,7 @@ include(ExternalProject)
 include(mchbuildSetExternalProperties)
 include(mchbuildRequireOnlyOneOf)
 include(mchbuildCheckRequiredVars)
+include(mchbuildCloneRepository)
 
 set(DIR_OF_PROTO_EXTERNAL ${CMAKE_CURRENT_LIST_DIR})  
 
@@ -95,6 +96,6 @@ function(mchbuild_external_package)
 
   endif()
 
-  set(gtclang_DIR "${binary_dir}/prefix/gtclang/cmake" CACHE INTERNAL "")
+  set(gtclang_DIR "${install_dir}/cmake" CACHE INTERNAL "")
 
 endfunction()
